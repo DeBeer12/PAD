@@ -16,7 +16,8 @@ public class DBController {
 
     public DBController() {
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://" + ip + ":3306/zoosterr4", username, password);
+            conn = DriverManager.getConnection("jdbc:mysql://" + ip + "/zoosterr4?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"
+                    ,username, password);
             if (conn != null) {
                 System.out.println("connection succesfull");
             }
@@ -26,6 +27,17 @@ public class DBController {
         }
     }
 
-    //Query methods below or can be in a seperate class
+    //Query methods below, note that the algorithm of score can be done in here as well
+    public void getGame(){
+        String sql = "SELECT * FROM Game";
+        try {
+            st = conn.createStatement();
+            rs = st.executeQuery(sql);
+            //Result set contains all the records from Game
+            //Need a model for game
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 
 }

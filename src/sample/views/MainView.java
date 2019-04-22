@@ -13,20 +13,21 @@ public class MainView {
     private Parent root;
     private MainController mainController;
 
+    Label score;
+    Label balls;
+
     public MainView(MainController mainController){
         root = createRoot();
         this.mainController = mainController;
         setupController();
+
     }
 
     public Parent createRoot(){
         VBox box = new VBox(10);
 
-        int scorePoints = 0;
-        int ballsAmount = 0;
-
-        Label score = new Label("Score: " + scorePoints);
-        Label balls = new Label("Ballen: " + ballsAmount);
+        score = new Label();
+        balls = new Label();
 
         box.getChildren().addAll(score, balls);
 
@@ -38,6 +39,7 @@ public class MainView {
 
     public void setupController(){
         mainController.initialize();
+        mainController.setScore(score, balls);
     }
 
     public Parent getRoot(){
