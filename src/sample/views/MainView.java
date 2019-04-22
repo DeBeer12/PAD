@@ -20,7 +20,6 @@ public class MainView {
         root = createRoot();
         this.mainController = mainController;
         setupController();
-
     }
 
     public Parent createRoot(){
