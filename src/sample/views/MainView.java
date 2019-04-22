@@ -24,6 +24,8 @@ public class MainView {
     }
 
     public Parent createRoot(){
+        //View needs to get modified
+        //Add a start game button as well
         VBox box = new VBox(10);
 
         score = new Label();

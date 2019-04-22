@@ -14,7 +14,6 @@ public class MainController {
 
     public void setScore(Label score, Label balls){
         //Algorithm for score and balls here, change the magic numbers to the valeus in the algorithm
-
         score.setText("Score: " + 50);
         balls.setText("Ballen: " + 500);
     }
