@@ -29,10 +29,16 @@ public class MainController {
         gat4 = game.getSensor4();
         gat5 = game.getSensor5();
 
+<<<<<<< Updated upstream
         int punten = (gat1 * 100) + (gat2 * 100) + (gat3 * 50) + (gat4 * 25) + (gat5 * 0);
         ballen = 10 - (gat1 + gat2 + gat3 + gat4 + gat5);
                 score.setText("Score: " + punten);
         balls.setText("Ballen: " + ballen);
+=======
+        int punten = (gat1*100)+(gat2*100)+(gat3*50)+(gat4*25)+(gat5*0);
+        score.setText("Score: " + punten);
+        balls.setText("Ballen: " + 500);
+>>>>>>> Stashed changes
     }
 
     public void resetGame(Button button) {

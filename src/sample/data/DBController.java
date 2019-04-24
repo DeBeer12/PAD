@@ -41,6 +41,9 @@ public class DBController {
             ResultSet rs = st.executeQuery(sql);
             if (rs.next()){
                 game = new Game(rs.getInt(1),rs.getInt(2),rs.getInt(3),rs.getInt(4),rs.getInt(5),rs.getInt(6));
+            }else {
+                game = new Game(0,0,0,0,0,0);
+
             }
 
 
