@@ -2,6 +2,9 @@ package sample.controllers;
 
 import javafx.application.Platform;
 import sample.data.DBController;
+import java.util.Timer;
+import java.util.TimerTask;
+
 
 import javafx.scene.control.*;
 import sample.models.Game;
@@ -22,23 +25,32 @@ public class MainController {
     }
 
     public void setScore(Label score, Label balls) {
-            Game game = controller.getGame();
-            gat1 = game.getSensor1();
-            gat2 = game.getSensor2();
-            gat3 = game.getSensor3();
-            gat4 = game.getSensor4();
-            gat5 = game.getSensor5();
+        Game game = controller.getGame();
+        gat1 = game.getSensor1();
+        gat2 = game.getSensor2();
+        gat3 = game.getSensor3();
+        gat4 = game.getSensor4();
+        gat5 = game.getSensor5();
 
-            int punten = (gat1 * 100) + (gat2 * 100) + (gat3 * 50) + (gat4 * 25) + (gat5 * 0);
-            ballen -= (gat1 + gat2 + gat3 + gat4 + gat5);
+        int punten = (gat1 * 100) + (gat2 * 100) + (gat3 * 50) + (gat4 * 25) + (gat5 * 0);
+        ballen -= (gat1 + gat2 + gat3 + gat4 + gat5);
 
-            score.setText("Score: " + punten);
-            balls.setText("Ballen: " + ballen);
+        score.setText("Score: " + punten);
+        balls.setText("Ballen: " + ballen);
 
-
-        if (ballen == 0){
+        if (ballen == 0) {
             System.out.println("Finished");
+        return;
         }
+
+        Timer labelUpdate = new Timer();
+        labelUpdate.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                score.setText("Score: " + punten);
+                balls.setText("Ballen: " + ballen);
+            }
+        }, 10);
 
     }
 
