@@ -21,7 +21,7 @@ public class MainController {
     }
 
     public void resetGame(Button button){
-        //controller.deleteGame();
+        controller.deleteGame();
         button.setOnAction(e ->{
             Platform.exit();
         });

@@ -1,5 +1,7 @@
 package sample.data;
 
+import sample.models.Game;
+
 import javax.swing.plaf.nimbus.State;
 import java.sql.*;
 
@@ -25,17 +27,19 @@ public class DBController {
         }
     }
 
-    //Query methods below, note that the algorithm of score can be done in here as well
-    public void getGame(){
+    public Game getGame(){
         String sql = "SELECT * FROM Gametest";
+        Game game = null;
         try {
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sql);
-            //Result set contains all the records from Game
-            //Need a model for game
+            game = new Game(rs.getInt(1),rs.getInt(2),rs.getInt(3),rs.getInt(4),rs.getInt(5),rs.getInt(6));
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
+        return game;
     }
 
     public void setGame(int oldGame, int newGame){
