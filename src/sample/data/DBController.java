@@ -34,12 +34,15 @@ public class DBController {
     }
 
     public Game getGame(){
-        String sql = "SELECT * FROM Gametest";
+        String sql = "SELECT * FROM Gametest WHERE GAMEID <> 1";
         Game game = null;
         try {
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sql);
-            game = new Game(rs.getInt(1),rs.getInt(2),rs.getInt(3),rs.getInt(4),rs.getInt(5),rs.getInt(6));
+            if (rs.next()){
+                game = new Game(rs.getInt(1),rs.getInt(2),rs.getInt(3),rs.getInt(4),rs.getInt(5),rs.getInt(6));
+            }
+
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -65,7 +68,7 @@ public class DBController {
     }
 
     public void deleteGame(){
-        String sql = "DELETE FROM Gametest";
+        String sql = "DELETE FROM Gametest WHERE GAMEID <> 1";
         try {
             PreparedStatement st = conn.prepareStatement(sql);
             st.executeUpdate();

@@ -8,7 +8,7 @@ import sample.models.Game;
 
 public class MainController {
 
-    DBController controller;
+    DBController controller = new DBController();
     private int gat1;
     private int gat2;
     private int gat3;
@@ -17,7 +17,7 @@ public class MainController {
 
     public void initialize(){
         System.out.println("Lets get the bread");
-        controller = new DBController();
+        //controller = new DBController();
     }
 
     public void setScore(Label score, Label balls){
@@ -34,9 +34,9 @@ public class MainController {
     }
 
     public void resetGame(Button button){
-        controller.deleteGame();
         button.setOnAction(e ->{
             Platform.exit();
+            controller.deleteGame();
         });
     }
 }

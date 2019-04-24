@@ -55,8 +55,9 @@ public class MainView {
 
     public void setupController(){
         mainController.initialize();
-        mainController.setScore(score, balls);
         mainController.resetGame(knop);
+        mainController.setScore(score, balls);
+
     }
 
     public Parent getRoot(){
