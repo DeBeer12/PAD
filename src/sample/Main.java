@@ -10,13 +10,16 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage){
-        MainController mainController = new MainController();
-        MainView mainView = new MainView(mainController);
+        MainController mainController;
 
-        Scene scene = new Scene(mainView.getRoot());
+            mainController = new MainController();
+            MainView mainView = new MainView(mainController);
 
-        primaryStage.setScene(scene);
+            Scene scene = new Scene(mainView.getRoot());
+            primaryStage.setScene(scene);
+
         primaryStage.show();
+
     }
 
 

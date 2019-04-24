@@ -14,7 +14,7 @@ public class MainController {
     private int gat3;
     private int gat4;
     private int gat5;
-    private int ballen;
+    private int ballen = 10;
 
     public void initialize() {
         System.out.println("Lets get the bread");
@@ -22,23 +22,24 @@ public class MainController {
     }
 
     public void setScore(Label score, Label balls) {
-        Game game = controller.getGame();
-        gat1 = game.getSensor1();
-        gat2 = game.getSensor2();
-        gat3 = game.getSensor3();
-        gat4 = game.getSensor4();
-        gat5 = game.getSensor5();
+            Game game = controller.getGame();
+            gat1 = game.getSensor1();
+            gat2 = game.getSensor2();
+            gat3 = game.getSensor3();
+            gat4 = game.getSensor4();
+            gat5 = game.getSensor5();
 
-<<<<<<< Updated upstream
-        int punten = (gat1 * 100) + (gat2 * 100) + (gat3 * 50) + (gat4 * 25) + (gat5 * 0);
-        ballen = 10 - (gat1 + gat2 + gat3 + gat4 + gat5);
-                score.setText("Score: " + punten);
-        balls.setText("Ballen: " + ballen);
-=======
-        int punten = (gat1*100)+(gat2*100)+(gat3*50)+(gat4*25)+(gat5*0);
-        score.setText("Score: " + punten);
-        balls.setText("Ballen: " + 500);
->>>>>>> Stashed changes
+            int punten = (gat1 * 100) + (gat2 * 100) + (gat3 * 50) + (gat4 * 25) + (gat5 * 0);
+            ballen -= (gat1 + gat2 + gat3 + gat4 + gat5);
+
+            score.setText("Score: " + punten);
+            balls.setText("Ballen: " + ballen);
+
+
+        if (ballen == 0){
+            System.out.println("Finished");
+        }
+
     }
 
     public void resetGame(Button button) {
@@ -46,5 +47,9 @@ public class MainController {
             Platform.exit();
             controller.deleteGame();
         });
+    }
+
+    public int getBallen() {
+        return ballen;
     }
 }
