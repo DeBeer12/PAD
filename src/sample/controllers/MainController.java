@@ -14,13 +14,14 @@ public class MainController {
     private int gat3;
     private int gat4;
     private int gat5;
+    private int ballen;
 
-    public void initialize(){
+    public void initialize() {
         System.out.println("Lets get the bread");
         //controller = new DBController();
     }
 
-    public void setScore(Label score, Label balls){
+    public void setScore(Label score, Label balls) {
         Game game = controller.getGame();
         gat1 = game.getSensor1();
         gat2 = game.getSensor2();
@@ -28,13 +29,14 @@ public class MainController {
         gat4 = game.getSensor4();
         gat5 = game.getSensor5();
 
-        int punten = (gat1*100)+(gat2*100)+(gat3*50)+(gat4*25)+(gat5*0);
-        score.setText("Score: " + 50);
-        balls.setText("Ballen: " + 500);
+        int punten = (gat1 * 100) + (gat2 * 100) + (gat3 * 50) + (gat4 * 25) + (gat5 * 0);
+        ballen = 10 - (gat1 + gat2 + gat3 + gat4 + gat5);
+                score.setText("Score: " + punten);
+        balls.setText("Ballen: " + ballen);
     }
 
-    public void resetGame(Button button){
-        button.setOnAction(e ->{
+    public void resetGame(Button button) {
+        button.setOnAction(e -> {
             Platform.exit();
             controller.deleteGame();
         });
