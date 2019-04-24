@@ -1,8 +1,10 @@
 package sample.views;
 
+import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import sample.controllers.MainController;
 
 import javafx.scene.control.*;
@@ -15,6 +17,7 @@ public class MainView {
 
     Label score;
     Label balls;
+    Button knop;
 
     public MainView(MainController mainController){
         root = createRoot();
@@ -27,13 +30,25 @@ public class MainView {
         //Add a start game button as well
         VBox box = new VBox(10);
 
+        Font font = new Font("Arial",50);
+        Font font2 = new Font("Arial",25);
+
         score = new Label();
         balls = new Label();
+        knop = new Button("Stop");
 
-        box.getChildren().addAll(score, balls);
+
+        score.setMinSize(50,50);
+        score.setFont(font);
+
+        balls.setMinSize(50,50);
+        balls.setFont(font2);
+
+        box.getChildren().addAll(score, balls, knop);
 
         box.setMinHeight(300);
         box.setMinWidth(300);
+        box.setPadding(new Insets(10,10,10,10));
 
         return box;
     }
@@ -41,6 +56,7 @@ public class MainView {
     public void setupController(){
         mainController.initialize();
         mainController.setScore(score, balls);
+        mainController.resetGame(knop);
     }
 
     public Parent getRoot(){
