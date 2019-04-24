@@ -17,10 +17,11 @@ public class MainController {
 
     public void initialize(){
         System.out.println("Lets get the bread");
-        controller = new DBController();
+        //controller = new DBController();
     }
 
     public void setScore(Label score, Label balls){
+        DBController controller = new DBController();
         Game game = controller.getGame();
         gat1 = game.getSensor1();
         gat2 = game.getSensor2();
