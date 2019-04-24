@@ -27,7 +27,7 @@ public class DBController {
 
     //Query methods below, note that the algorithm of score can be done in here as well
     public void getGame(){
-        String sql = "SELECT * FROM Game";
+        String sql = "SELECT * FROM Gametest";
         try {
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(sql);
@@ -39,7 +39,7 @@ public class DBController {
     }
 
     public void setGame(int oldGame, int newGame){
-        String sql = "UPDATE Game SET gat1 = ?, gat2 = ?, gat3 = ?, gat 4 = ?, gat5 = ? WHERE idGame = ?";
+        String sql = "UPDATE Gametest SET gat1 = ?, gat2 = ?, gat3 = ?, gat 4 = ?, gat5 = ? WHERE idGame = ?";
         try {
             PreparedStatement st = conn.prepareStatement(sql);
             st.setInt(1,newGame);
@@ -48,6 +48,16 @@ public class DBController {
             st.setInt(4,newGame);
             st.setInt(5,newGame);
             st.setInt(6,oldGame);
+            st.executeUpdate();
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteGame(){
+        String sql = "DELETE FROM Gametest";
+        try {
+            PreparedStatement st = conn.prepareStatement(sql);
             st.executeUpdate();
         }catch (SQLException e){
             e.printStackTrace();
