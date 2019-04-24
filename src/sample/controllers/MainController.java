@@ -4,10 +4,16 @@ import javafx.application.Platform;
 import sample.data.DBController;
 
 import javafx.scene.control.*;
+import sample.models.Game;
 
 public class MainController {
 
     DBController controller;
+    private int gat1;
+    private int gat2;
+    private int gat3;
+    private int gat4;
+    private int gat5;
 
     public void initialize(){
         System.out.println("Lets get the bread");
@@ -15,7 +21,14 @@ public class MainController {
     }
 
     public void setScore(Label score, Label balls){
-        //Algorithm for score and balls here, change the magic numbers to the valeus in the algorithm
+        Game game = controller.getGame();
+        gat1 = game.getSensor1();
+        gat2 = game.getSensor2();
+        gat3 = game.getSensor3();
+        gat4 = game.getSensor4();
+        gat5 = game.getSensor5();
+
+        int punten = (gat1*100)+(gat2*100)+(gat3*50)+(gat4*25)+(gat5*0);
         score.setText("Score: " + 50);
         balls.setText("Ballen: " + 500);
     }
