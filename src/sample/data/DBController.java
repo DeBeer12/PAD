@@ -21,7 +21,6 @@ public class DBController {
             e.printStackTrace();
             return;
         }
-
         try {
             conn = DriverManager.getConnection("jdbc:mysql://" + ip + "/zoosterr4?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"
                     ,username, password);
