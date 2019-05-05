@@ -2,7 +2,6 @@ package sample.data;
 
 import sample.models.Game;
 
-import javax.swing.plaf.nimbus.State;
 import java.sql.*;
 
 //This is the database connection/controller
@@ -38,6 +37,26 @@ public class DBController {
         Game game = null;
         try {
             Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            if (rs.next()){
+                game = new Game(rs.getInt(1),rs.getInt(2),rs.getInt(3),rs.getInt(4),rs.getInt(5),rs.getInt(6));
+            }else {
+                game = new Game(0,0,0,0,0,0);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return game;
+    }
+
+    public Game getNewGame(int lastGame){
+        String sql = "SELECT * FROM Gametest WHERE GAMEID <> 1 || GAMEID <> ?";
+        Game game = null;
+        try {
+            Statement st = conn.prepareStatement(sql);
+            ((PreparedStatement) st).setInt(lastGame,1);
             ResultSet rs = st.executeQuery(sql);
             if (rs.next()){
                 game = new Game(rs.getInt(1),rs.getInt(2),rs.getInt(3),rs.getInt(4),rs.getInt(5),rs.getInt(6));

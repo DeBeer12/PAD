@@ -28,6 +28,9 @@ public class MainController {
             Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), ev -> {
                 score.setText("Score: "+ returnPunten());
                 balls.setText("Ballen: " + returnBallen());
+                /*if (returnBallen() == 0){
+                    controller.deleteGame();
+                }*/
             }));
             timeline.setCycleCount(Animation.INDEFINITE);
             timeline.play();
@@ -35,6 +38,9 @@ public class MainController {
 
     private int returnPunten(){
         Game game = controller.getGame();
+        /*if (returnBallen() == 0){
+            game = controller.getNewGame(game.getId());
+        }*/
         gat1 = game.getSensor1();
         gat2 = game.getSensor2();
         gat3 = game.getSensor3();
@@ -54,6 +60,17 @@ public class MainController {
         gat5 = game.getSensor5();
 
         int ballen = 10 - (gat1 + gat2 + gat3 + gat4 + gat5);
+
+        /*if (ballen == 0){
+            Game newGame = controller.getNewGame(game.getId());
+            gat1 = game.getSensor1();
+            gat2 = game.getSensor2();
+            gat3 = game.getSensor3();
+            gat4 = game.getSensor4();
+            gat5 = game.getSensor5();
+            ballen = 10 - (gat1 + gat2 + gat3 + gat4 + gat5);
+        }*/
+
         return ballen;
     }
 
