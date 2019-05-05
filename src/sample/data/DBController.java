@@ -34,7 +34,7 @@ public class DBController {
     }
 
     public Game getGame(){
-        String sql = "SELECT * FROM Gametest WHERE GAMEID <> 1";
+        String sql = "SELECT * FROM Gametest WHERE GAMEID <> 1 ";
         Game game = null;
         try {
             Statement st = conn.createStatement();
@@ -43,9 +43,7 @@ public class DBController {
                 game = new Game(rs.getInt(1),rs.getInt(2),rs.getInt(3),rs.getInt(4),rs.getInt(5),rs.getInt(6));
             }else {
                 game = new Game(0,0,0,0,0,0);
-
             }
-
 
         } catch (SQLException e) {
             e.printStackTrace();
