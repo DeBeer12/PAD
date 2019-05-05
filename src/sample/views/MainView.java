@@ -46,8 +46,9 @@ public class MainView {
 
         box.getChildren().addAll(score, balls, knop);
 
-        box.setMinHeight(300);
-        box.setMinWidth(300);
+        box.setMinHeight(500);
+        box.setMinWidth(500);
+        box.setStyle("-fx-background-color: purple;");
         box.setPadding(new Insets(10,10,10,10));
 
         return box;
