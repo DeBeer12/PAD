@@ -10,32 +10,32 @@ import sample.views.MainView;
 
 public class Main extends Application {
 
-    @Override
-    public void start(Stage primaryStage){
-        MainController mainController;
-
-            mainController = new MainController();
-            MainView mainView = new MainView(mainController);
-
-            Scene scene = new Scene(mainView.getRoot());
-            primaryStage.setScene(scene);
-
-        primaryStage.show();
-
-    }
-
-//    public void start(Stage secondaryStage){
-//        LoginController loginController;
+//    @Override
+//    public void start(Stage primaryStage){
+//        MainController mainController;
 //
-//        loginController = new LoginController();
-//        LoginView loginView = new LoginView(loginController);
+//            mainController = new MainController();
+//            MainView mainView = new MainView(mainController);
 //
-//        Scene scene = new Scene(loginView.getRoot());
-//        secondaryStage.setScene(scene);
+//            Scene scene = new Scene(mainView.getRoot());
+//            primaryStage.setScene(scene);
 //
-//        secondaryStage.show();
+//        primaryStage.show();
 //
 //    }
+
+    public void start(Stage secondaryStage){
+        LoginController loginController;
+
+        loginController = new LoginController();
+        LoginView loginView = new LoginView(loginController);
+
+        Scene scene = new Scene(loginView.getRoot());
+        secondaryStage.setScene(scene);
+
+        secondaryStage.show();
+
+    }
 
     public static void main(String[] args) {
         launch(args);

@@ -35,7 +35,7 @@ public class LoginView {
     public Parent createRoot() {
         //View needs to get modified
         //Add a start game button as well
-        BorderPane borderPane = new BorderPane();
+        VBox box = new VBox(10);
 
         Font font = new Font("Arial", 35);
         Font font2 = new Font("Arial", 20);
@@ -56,17 +56,17 @@ public class LoginView {
         subtitle.setMinSize(15, 15);
         subtitle.setFont(font2);
 
-        borderPane.getChildren().addAll(title, subtitle, knop, knopStart);
+        box.getChildren().addAll(title, subtitle, knop, knopStart);
 
-        borderPane.setMinHeight(500);
-        borderPane.setMinWidth(500);
-        borderPane.setPadding(new Insets(10, 10, 10, 10));
-        borderPane.setStyle("-fx-background-color: purple;");
-        return borderPane;
+        box.setMinHeight(500);
+        box.setMinWidth(500);
+        box.setPadding(new Insets(10, 10, 10, 10));
+        box.setStyle("-fx-background-color: purple;");
+        return box;
     }
 
     public void setupController() {
-       // controller.setBorderpane(borderPane);
+      //controller.setBorderpane(borderPane);
 
     }
 
