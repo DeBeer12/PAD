@@ -30,6 +30,8 @@ public class MainController {
                 balls.setText("Ballen: " + returnBallen());
                 if (returnBallen() == 0){
                     gespeeld.setText("Goed gespeeld! Nog een potje?\nDruk op de knop!");
+                }else {
+                    gespeeld.setText("");
                 }
                 /*if (returnBallen() == 0){
                     controller.deleteGame();
@@ -41,6 +43,9 @@ public class MainController {
 
     public int returnPunten(){
         Game game = controller.getGame();
+        /*if (game == null){
+            game = new Game(1,2,3,5,0,1);
+        }*/
         /*if (returnBallen() == 0){
             game = controller.getNewGame(game.getId());
         }*/
@@ -56,6 +61,9 @@ public class MainController {
 
     public int returnBallen(){
         Game game = controller.getGame();
+        /*if (game == null){
+            game = new Game(1,2,3,5,0,1);
+        }*/
         gat1 = game.getSensor1();
         gat2 = game.getSensor2();
         gat3 = game.getSensor3();

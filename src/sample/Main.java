@@ -17,6 +17,7 @@ public class Main extends Application {
 
             Scene scene = new Scene(mainView.getRoot());
             primaryStage.setScene(scene);
+            primaryStage.setFullScreen(true);
 
         primaryStage.show();
 
