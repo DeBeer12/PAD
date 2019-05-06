@@ -17,7 +17,9 @@ public class MainView {
 
     Label score;
     Label balls;
+    Label gespeeld;
     Button knop;
+
 
     public MainView(MainController mainController){
         root = createRoot();
@@ -35,8 +37,10 @@ public class MainView {
 
         score = new Label();
         balls = new Label();
+        gespeeld = new Label();
         knop = new Button("Stop");
 
+        gespeeld.setFont(font2);
 
         score.setMinSize(50,50);
         score.setFont(font);
@@ -44,7 +48,8 @@ public class MainView {
         balls.setMinSize(50,50);
         balls.setFont(font2);
 
-        box.getChildren().addAll(score, balls, knop);
+        box.getChildren().addAll(score, balls, knop, gespeeld);
+
 
         box.setMinHeight(300);
         box.setMinWidth(300);
@@ -56,7 +61,7 @@ public class MainView {
     public void setupController(){
         mainController.initialize();
         mainController.resetGame(knop);
-        mainController.setScore(score, balls);
+        mainController.setScore(score, balls, gespeeld);
 
     }
 
