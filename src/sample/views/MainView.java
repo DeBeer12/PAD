@@ -54,7 +54,7 @@ public class MainView {
         balls.setStyle("-fx-text-fill: linear-gradient(gray,blue)");
 
         knop.setStyle("-fx-background-color: linear-gradient(orange,purple)");
-        
+
 
         box.getChildren().addAll(score, balls, knop, gespeeld);
 
