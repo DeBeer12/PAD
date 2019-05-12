@@ -1,0 +1,18 @@
+/*Styling van view window*/
+.root{
+    -fx-background-color: purple;
+    -fx-border-color: black;
+    -fx-border-width: 3;
+}
+.label-score{
+    -fx-text-fill: linear-gradient(red,orange,yellow,green)
+}
+
+.label-balls{
+    -fx-text-fill: linear-gradient(gray,blue);
+}
+
+.button{
+    -fx-background-color: linear-gradient(orange,purple) ;
+
+}
