@@ -2,6 +2,7 @@ package sample;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyCombination;
 import javafx.stage.Stage;
 import sample.controllers.LoginController;
 import sample.controllers.MainController;
@@ -32,8 +33,12 @@ public class Main extends Application {
 
         Scene scene = new Scene(loginView.getRoot());
         secondaryStage.setScene(scene);
-
+scene.getStylesheets().add("./sample/css/login.css");
         secondaryStage.show();
+        secondaryStage.setFullScreen(true);
+        secondaryStage.setTitle("TITLESCREEN");
+        secondaryStage.setFullScreenExitHint("");
+        secondaryStage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
 
     }
 

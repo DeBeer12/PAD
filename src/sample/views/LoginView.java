@@ -19,7 +19,6 @@ public class LoginView {
 
         Label title;
         Label subtitle;
-        Button knop;
         Button knopStart;
 
         public LoginView(LoginController loginController){
@@ -42,8 +41,6 @@ public class LoginView {
             subtitle.setTextFill(Color.web("#fff"));
             knopStart = new Button("Start");
             knopStart.setPadding(new Insets(10,50,10,50));
-            knop = new Button("Stop");
-            knop.setPadding(new Insets(10,50,10,50));
 
 
             title.setMinSize(20,20);
@@ -52,7 +49,7 @@ public class LoginView {
             subtitle.setMinSize(15,15);
             subtitle.setFont(font2);
 
-            box.getChildren().addAll(title, subtitle, knop, knopStart);
+            box.getChildren().addAll(title, subtitle, knopStart);
 
             box.setMinHeight(500);
             box.setMinWidth(500);
@@ -62,6 +59,8 @@ public class LoginView {
         }
 
         public void setupController(){
+            loginController.initialize();
+            loginController.startGame(knopStart);
 
         }
 

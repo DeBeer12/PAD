@@ -6,6 +6,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyCombination;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import sample.data.DBController;
 import sample.views.LoginView;
@@ -15,7 +17,6 @@ import java.awt.event.ActionEvent;
 import java.io.IOException;
 
 public class LoginController {
-
     private DBController controller = new DBController();
 
     public void initialize() {
@@ -23,34 +24,29 @@ public class LoginController {
     }
 
 
-    public void resetGame(Button button) {
-        button.setOnAction(e -> {
-            Platform.exit();
-            controller.deleteGame();
-        });
-    }
+    public void startGame(Button button) {
+        button.setOnAction(E -> {
+            Stage thisStage = (Stage) button.getScene().getWindow();
+            thisStage.close();
 
-    public void startGame(Button button) throws IOException {
-        button.setOnAction  (e -> {
-            Parent game_View_Parent = FXMLLoader.load(getClass().getResource("MainView.java"));
-            Scene game_View_Scene = new Scene(game_View_Parent);
-            Stage app_Stage = (Stage) ((Node) event.getSource().getScene().getWindow());
-            app_Stage.setScene(game_View_Scene);
-            app_Stage.show();
+            Stage stage;
 
-
-//            MainController mainController;
-//
-//            mainController = new MainController();
-//            MainView mainView = new MainView(mainController);
-//
-//            Stage stage = new Stage();
-//
-//            Scene scene = new Scene(mainView.createRoot());
-//            stage.setScene(scene);
-//            stage.show();
-            controller.deleteGame();
+            MainController mainController;
+            mainController = new MainController();
+            MainView mainView = new MainView(mainController);
+            stage = new Stage();
+            Scene scene = new Scene(mainView.getRoot());
+            stage.setScene(scene);
+            scene.getStylesheets().add("./sample/css/game.css");
+            stage.show();
+            stage.setFullScreen(true);
+            stage.setTitle("GAME!!!");
+            stage.setFullScreenExitHint("");
+            stage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
         });
     }
 
 }
+
+
+

@@ -4,12 +4,19 @@ import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.application.Platform;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.input.KeyCombination;
+import javafx.stage.Window;
 import javafx.util.Duration;
 import sample.data.DBController;
+import javafx.stage.Stage;
 
 
 import javafx.scene.control.*;
 import sample.models.Game;
+import sample.views.LoginView;
+import sample.views.MainView;
 
 public class MainController {
 
@@ -19,21 +26,26 @@ public class MainController {
     private int gat3;
     private int gat4;
     private int gat5;
+    LoginController loginController = new LoginController();
+    MainController mainController = new MainController();
+    MainView mainView = new MainView(mainController);
+
 
     public void initialize() {
         System.out.println("Lets get the bread");
+
     }
 
     public void setScore(Label score, Label balls) {
-            Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), ev -> {
-                score.setText("Score: "+ returnPunten());
-                balls.setText("Ballen: " + returnBallen());
-            }));
-            timeline.setCycleCount(Animation.INDEFINITE);
-            timeline.play();
+        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), ev -> {
+            score.setText("Score: " + returnPunten());
+            balls.setText("Ballen: " + returnBallen());
+        }));
+        timeline.setCycleCount(Animation.INDEFINITE);
+        timeline.play();
     }
 
-    private int returnPunten(){
+    private int returnPunten() {
         Game game = controller.getGame();
         gat1 = game.getSensor1();
         gat2 = game.getSensor2();
@@ -45,7 +57,7 @@ public class MainController {
         return punten;
     }
 
-    private int returnBallen(){
+    private int returnBallen() {
         Game game = controller.getGame();
         gat1 = game.getSensor1();
         gat2 = game.getSensor2();
@@ -59,9 +71,24 @@ public class MainController {
 
     public void resetGame(Button button) {
         button.setOnAction(e -> {
-            Platform.exit();
+            Stage thisStage = (Stage) button.getScene().getWindow();
+            thisStage.close();
+
+            Stage stage = new Stage();
+
+            LoginController loginController = new LoginController();
+            LoginView loginView = new LoginView(loginController);
+            Scene scene = new Scene(loginView.getRoot());
+            stage.setScene(scene);
+            scene.getStylesheets().add("./sample/css/login.css");
+            stage.show();
+            stage.setFullScreen(true);
+            stage.setTitle("TITLESCREEN");
+            stage.setFullScreenExitHint("");
+            stage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
             controller.deleteGame();
         });
     }
-
 }
+
+
