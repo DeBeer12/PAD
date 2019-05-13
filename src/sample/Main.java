@@ -16,7 +16,6 @@ public class Main extends Application {
             MainView mainView = new MainView(mainController);
 
             Scene scene = new Scene(mainView.getRoot());
-            scene.getStylesheets().add("sample/views/style.css");
             primaryStage.setScene(scene);
             primaryStage.setFullScreen(true);
 

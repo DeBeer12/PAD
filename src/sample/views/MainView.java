@@ -35,6 +35,9 @@ public class MainView {
         Font font = new Font("Arial",150);
         Font font2 = new Font("Arial",75);
 
+        box.setStyle("-fx-background-color: gray");
+        box.setStyle("-fx-border-color: black");
+
         score = new Label();
         balls = new Label();
         gespeeld = new Label();
@@ -44,11 +47,14 @@ public class MainView {
 
         score.setMinSize(50,50);
         score.setFont(font);
-        score.getStyleClass().add("label-score");
+        score.setStyle("-fx-text-fill: linear-gradient(red,orange,yellow,green,blue,purple)");
 
         balls.setMinSize(50,50);
         balls.setFont(font2);
-        balls.getStyleClass().add("label-balls");
+        balls.setStyle("-fx-text-fill: linear-gradient(gray,blue)");
+
+        knop.setStyle("-fx-background-color: linear-gradient(orange,purple)");
+
 
         box.getChildren().addAll(score, balls, knop, gespeeld);
 
