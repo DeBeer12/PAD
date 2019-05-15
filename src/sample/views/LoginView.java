@@ -14,58 +14,47 @@ import sample.controllers.MainController;
 
 public class LoginView {
 
-        private Parent root;
-        private LoginController loginController;
+    private Parent root;
+    private LoginController loginController;
 
-        Label title;
-        Label subtitle;
-        Button knopStart;
+    Label title;
+    Label subtitle;
+    Button knopStart;
 
-        public LoginView(LoginController loginController){
-            root = createRoot();
-            this.loginController = loginController;
-            setupController();
-        }
+    public LoginView(LoginController loginController) {
+        root = createRoot();
+        this.loginController = loginController;
+        setupController();
+    }
 
-        public Parent createRoot(){
-            //View needs to get modified
-            //Add a start game button as well
-            VBox box = new VBox(10);
+    public Parent createRoot() {
+        //View needs to get modified
+        //Add a start game button as well
+        VBox box = new VBox(10);
+        box.getStyleClass().add("box");
 
-            Font font = new Font("Arial",35);
-            Font font2 = new Font("Arial",20);
+        title = new Label("Hey daar!");
+        title.getStyleClass().add("label-title");
 
-            title = new Label("Hey daar!");
-            title.setTextFill(Color.web("#fff"));
-            subtitle = new Label("Klik op 'Start' om te beginnen met spelen");
-            subtitle.setTextFill(Color.web("#fff"));
-            knopStart = new Button("Start");
-            knopStart.setPadding(new Insets(10,50,10,50));
+        subtitle = new Label("Klik op 'Start' om te\nbeginnen met spelen");
+        subtitle.getStyleClass().add("label-subtitle");
 
+        knopStart = new Button("Start");
+        knopStart.getStyleClass().add("button-knopStart");
 
-            title.setMinSize(20,20);
-            title.setFont(font);
+        box.getChildren().addAll(title, subtitle, knopStart);
 
-            subtitle.setMinSize(15,15);
-            subtitle.setFont(font2);
+        return box;
+    }
 
-            box.getChildren().addAll(title, subtitle, knopStart);
-
-            box.setMinHeight(500);
-            box.setMinWidth(500);
-            box.setPadding(new Insets(10,10,10,10));
-            box.setStyle("-fx-background-color: purple;");
-            return box;
-        }
-
-        public void setupController(){
-            loginController.initialize();
-            loginController.startGame(knopStart);
-
-        }
-
-        public Parent getRoot(){
-            return root;
-        }
+    public void setupController() {
+        loginController.initialize();
+        loginController.startGame(knopStart);
 
     }
+
+    public Parent getRoot() {
+        return root;
+    }
+
+}

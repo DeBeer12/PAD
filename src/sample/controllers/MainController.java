@@ -78,7 +78,7 @@ public class MainController {
             LoginView loginView = new LoginView(loginController);
             Scene scene = new Scene(loginView.getRoot());
             stage.setScene(scene);
-           // scene.getStylesheets().add("./sample/css/login.css");
+            scene.getStylesheets().add("./sample/css/login.css");
             stage.show();
             stage.setFullScreen(true);
             stage.setTitle("TITLESCREEN");

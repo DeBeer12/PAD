@@ -33,7 +33,7 @@ public class LoginController {
             Scene scene = new Scene(mainView.getRoot());
             stage.setScene(scene);
 
-            // scene.getStylesheets().add("./sample/css/game.css");
+            scene.getStylesheets().add("./sample/css/game.css");
             stage.show();
             stage.setFullScreen(true);
             stage.setTitle("GAME!!!");

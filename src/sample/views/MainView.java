@@ -29,27 +29,18 @@ public class MainView {
         //View needs to get modified
         //Add a start game button as well
         VBox box = new VBox(10);
-
-        Font font = new Font("Arial",50);
-        Font font2 = new Font("Arial",25);
+        box.getStyleClass().add("box");
 
         score = new Label();
+        score.getStyleClass().add("label-score");
+
         balls = new Label();
+        balls.getStyleClass().add("label-balls");
+
         knop = new Button("Stop");
-
-
-        score.setMinSize(50,50);
-        score.setFont(font);
-
-        balls.setMinSize(50,50);
-        balls.setFont(font2);
+        knop.getStyleClass().add("button-knop");
 
         box.getChildren().addAll(score, balls, knop);
-
-        box.setMinHeight(500);
-        box.setMinWidth(500);
-        box.setStyle("-fx-background-color: purple;");
-        box.setPadding(new Insets(10,10,10,10));
 
         return box;
     }

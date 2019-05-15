@@ -1,0 +1,25 @@
+.box{
+    '<font-style>' : 'https://fonts.google.com/specimen/Baloo+Bhai';
+    -fx-min-height: 500;
+    -fx-min-width: 500;
+    -fx-padding: 10, 10, 10, 10;
+    -fx-background-color: purple;
+    -fx-alignment: CENTER;
+}
+
+.label-score{
+    -fx-text-fill: orange;
+    -fx-font-size: 200;
+}
+
+.label-balls{
+    -fx-text-fill: orange;
+    -fx-font-size: 200;
+}
+
+.button-knop{
+    -fx-background-color: orange;
+    -fx-font-size: 75px;
+    -fx-min-width: 500px;
+    -fx-min-height: 100px;
+}
