@@ -8,5 +8,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+<<<<<<< HEAD
+=======
+    <orderEntry type="library" name="mysql-connector (3)" level="project" />
+>>>>>>> login
   </component>
 </module>

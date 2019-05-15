@@ -18,6 +18,9 @@ public class MainView {
     Label score;
     Label balls;
     Button knop;
+    Button buttonSwitch = new Button("Go to scene 2");
+
+
 
     public MainView(MainController mainController){
         root = createRoot();
@@ -44,7 +47,7 @@ public class MainView {
         balls.setMinSize(50,50);
         balls.setFont(font2);
 
-        box.getChildren().addAll(score, balls, knop);
+        box.getChildren().addAll(score, balls, knop,buttonSwitch);
 
         box.setMinHeight(500);
         box.setMinWidth(500);
