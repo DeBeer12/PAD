@@ -2,7 +2,6 @@ package sample;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import sample.controllers.LoginController;
 import sample.controllers.MainController;
@@ -11,40 +10,34 @@ import sample.views.MainView;
 
 public class Main extends Application {
 
-    Scene scene1,scene2;
+//    @Override
+//    public void start(Stage primaryStage){
+//        MainController mainController;
+//
+//            mainController = new MainController();
+//            MainView mainView = new MainView(mainController);
+//
+//            Scene scene = new Scene(mainView.getRoot());
+//            primaryStage.setScene(scene);
+//
+//        primaryStage.show();
+//
+//    }
 
-    @Override
-    public void start(Stage primaryStage){
-        MainController mainController;
+    public void start(Stage secondaryStage){
         LoginController loginController;
 
-            mainController = new MainController();
-            MainView mainView = new MainView(mainController);
         loginController = new LoginController();
         LoginView loginView = new LoginView(loginController);
 
-        Button buttonSwitch = new Button("Go to scene 2");
-        buttonSwitch.setOnAction(e -> primaryStage.setScene(scene2));
+        Scene scene = new Scene(loginView.getRoot());
+        secondaryStage.setScene(scene);
 
-        //layout
-         scene1 = new Scene(mainView.getRoot());
-
-        //layout 2
-        scene2 = new Scene (loginView.getRoot());
-
-        primaryStage.setScene(scene1);
-        primaryStage.setTitle("Awesome skeeball");
-        primaryStage.show();
+        secondaryStage.show();
 
     }
 
-
-
-
     public static void main(String[] args) {
         launch(args);
-
-
-
     }
 }

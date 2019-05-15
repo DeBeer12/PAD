@@ -7,7 +7,7 @@ import javafx.application.Platform;
 import javafx.util.Duration;
 import sample.data.DBController;
 
-import sample.helpers.StateManger;
+
 import javafx.scene.control.*;
 import sample.models.Game;
 
@@ -59,7 +59,7 @@ public class MainController {
 
     public void resetGame(Button button) {
         button.setOnAction(e -> {
-            StateManger.schakelScherm("VIEW_LOGIN_SCHERM");
+            Platform.exit();
             controller.deleteGame();
         });
     }
