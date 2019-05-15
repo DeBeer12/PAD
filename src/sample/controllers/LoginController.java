@@ -34,11 +34,11 @@ public class LoginController {
             stage.setScene(scene);
 
             scene.getStylesheets().add("./sample/css/game.css");
+            scene.getStylesheets().add("https://fonts.googleapis.com/css?family=Baloo+Bhai");
+            stage.setFullScreenExitHint("");
             stage.show();
             stage.setFullScreen(true);
             stage.setTitle("GAME!!!");
-            stage.setFullScreenExitHint("");
-            stage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
 
             Stage thisStage = (Stage) button.getScene().getWindow();
             thisStage.close();

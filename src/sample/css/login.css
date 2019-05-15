@@ -1,20 +1,20 @@
 .box {
-    -fx-font-style: 'https://fonts.google.com/specimen/Baloo+Bhai';
     -fx-min-height: 500;
     -fx-min-width: 500;
     -fx-padding: 10, 10, 10, 10;
     -fx-background-color: purple;
     -fx-alignment: CENTER;
+    -fx-font-family: "Baloo Bhai";
 }
 
 .label-title {
     -fx-text-fill: orange;
-    -fx-font-size: 250px;
+    -fx-font-size: 200px;
 }
 
 .label-subtitle {
     -fx-text-fill: orange;
-    -fx-font-size: 150px;
+    -fx-font-size: 100px;
 }
 
 .button-knopStart {

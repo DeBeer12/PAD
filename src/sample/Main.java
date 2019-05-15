@@ -12,37 +12,39 @@ import sample.views.MainView;
 public class Main extends Application {
 
     @Override
-    public void start(Stage primaryStage){
-        MainController mainController;
+//    public void start(Stage primaryStage){
+//        MainController mainController;
+//
+//            mainController = new MainController();
+//            MainView mainView = new MainView(mainController);
+//
+//            Scene scene = new Scene(mainView.getRoot());
+//            primaryStage.setScene(scene);
+//            scene.getStylesheets().add("./sample/css/game.css");
+//            scene.getStylesheets().add("https://fonts.googleapis.com/css?family=Baloo+Bhai");
+//            primaryStage.setTitle("GAME!!!");
+//
+//        primaryStage.show();
+//
+//    }
 
-            mainController = new MainController();
-            MainView mainView = new MainView(mainController);
+    public void start(Stage secondaryStage) {
+        LoginController loginController;
 
-            Scene scene = new Scene(mainView.getRoot());
-            primaryStage.setScene(scene);
-            scene.getStylesheets().add("./sample/css/game.css");
-            primaryStage.setTitle("GAME!!!");
+        loginController = new LoginController();
+        LoginView loginView = new LoginView(loginController);
 
-        primaryStage.show();
+        Scene scene = new Scene(loginView.getRoot());
+        secondaryStage.setScene(scene);
+        scene.getStylesheets().add("./sample/css/login.css");
+        scene.getStylesheets().add("https://fonts.googleapis.com/css?family=Baloo+Bhai");
+        secondaryStage.setFullScreenExitHint("");
+        secondaryStage.show();
+        secondaryStage.setFullScreen(true);
+        secondaryStage.setTitle("TITLESCREEN");
 
     }
 
-//    public void start(Stage secondaryStage) {
-//        LoginController loginController;
-//
-//        loginController = new LoginController();
-//        LoginView loginView = new LoginView(loginController);
-//
-//        Scene scene = new Scene(loginView.getRoot());
-//        secondaryStage.setScene(scene);
-//        scene.getStylesheets().add("./sample/css/login.css");
-//        secondaryStage.show();
-//        secondaryStage.setFullScreen(true);
-//        secondaryStage.setTitle("TITLESCREEN");
-//        secondaryStage.setFullScreenExitHint("");
-//        secondaryStage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
-//
-//    }
 
     public static void main(String[] args) {
         launch(args);

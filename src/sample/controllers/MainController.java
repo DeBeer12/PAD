@@ -79,12 +79,12 @@ public class MainController {
             Scene scene = new Scene(loginView.getRoot());
             stage.setScene(scene);
             scene.getStylesheets().add("./sample/css/login.css");
+            scene.getStylesheets().add("https://fonts.googleapis.com/css?family=Baloo+Bhai");
+            stage.setFullScreenExitHint("");
             stage.show();
             stage.setFullScreen(true);
             stage.setTitle("TITLESCREEN");
-            stage.setFullScreenExitHint("");
-            stage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
-            controller.deleteGame();
+                        controller.deleteGame();
         });
     }
 }
