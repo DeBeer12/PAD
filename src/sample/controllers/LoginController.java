@@ -29,20 +29,28 @@ public class LoginController {
             Stage thisStage = (Stage) button.getScene().getWindow();
             thisStage.close();
 
-            Stage stage;
-
             MainController mainController;
+
             mainController = new MainController();
             MainView mainView = new MainView(mainController);
-            stage = new Stage();
+            Stage stage = new Stage();
             Scene scene = new Scene(mainView.getRoot());
             stage.setScene(scene);
-            scene.getStylesheets().add("./sample/css/game.css");
-            stage.show();
-            stage.setFullScreen(true);
-            stage.setTitle("GAME!!!");
-            stage.setFullScreenExitHint("");
-            stage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
+
+
+//            MainController mainController = new MainController();
+//            MainView mainView = new MainView(mainController);
+//
+//            Stage stage = new Stage();
+//            Scene scene = new Scene(mainView.getRoot());
+//            stage.setScene(scene);
+//
+//            // scene.getStylesheets().add("./sample/css/game.css");
+//            stage.show();
+//            stage.setFullScreen(true);
+//            stage.setTitle("GAME!!!");
+//            stage.setFullScreenExitHint("");
+//            stage.setFullScreenExitKeyCombination(KeyCombination.NO_MATCH);
         });
     }
 
