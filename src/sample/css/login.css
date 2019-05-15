@@ -1,1 +1,7 @@
-#knop{-fx-background-color: orange}
+.knopStart {
+    -fx-background-color: orange
+}
+
+#title {
+    -fx-background-color: orange
+}

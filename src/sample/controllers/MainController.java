@@ -27,8 +27,6 @@ public class MainController {
     private int gat4;
     private int gat5;
     LoginController loginController = new LoginController();
-    MainController mainController = new MainController();
-    MainView mainView = new MainView(mainController);
 
 
     public void initialize() {
