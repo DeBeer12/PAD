@@ -9,17 +9,17 @@
 
 .label-score{
     -fx-text-fill: orange;
-    -fx-font-size: 100;
+    -fx-font-size: 200;
 }
 
 .label-balls{
     -fx-text-fill: orange;
-    -fx-font-size: 100;
+    -fx-font-size: 200;
 }
 
 .button-knop{
     -fx-background-color: orange;
-    -fx-font-size: 50px;
-    -fx-min-width: 250px;
+    -fx-font-size: 75px;
+    -fx-min-width: 500px;
     -fx-min-height: 100px;
 }
