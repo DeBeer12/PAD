@@ -13,22 +13,44 @@ public class DBController {
     private String ip = "oege.ie.hva.nl";
     private String username = "oosterr4";
     private String password = "XOxZwUxliy/8+0";
+    private String connectionStatus;
+
+
 
     public DBController() {
         try {
             conn = DriverManager.getConnection("jdbc:mysql://" + ip + "/zoosterr4?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"
                     ,username, password);
             if (conn != null) {
-                System.out.println("connection succesfull");
+                connectionStatus = "connection succesfull";
+                System.out.println(connectionStatus);
             }
         } catch (SQLException e) {
-            System.out.println("failed to connect");
+            connectionStatus = "failed to connect";
+            System.out.println(connectionStatus);
             e.printStackTrace();
         }
     }
 
     public Game getGame(){
         String sql = "SELECT * FROM Gametest WHERE GAMEID <> 1 ";
+        Game game = null;
+        try {
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            if (rs.next()){
+                game = new Game(rs.getInt(1),rs.getInt(2),rs.getInt(3),rs.getInt(4),rs.getInt(5),rs.getInt(6));
+            }else {
+                game = new Game(0,0,0,0,0,0);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return game;
+    }public Game getGameDummy(){
+        String sql = "SELECT * FROM Gametest WHERE GAMEID = 1 ";
         Game game = null;
         try {
             Statement st = conn.createStatement();
@@ -72,4 +94,7 @@ public class DBController {
         }
     }
 
+    public String getConnectionStatus() {
+        return connectionStatus;
+    }
 }

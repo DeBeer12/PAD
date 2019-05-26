@@ -34,13 +34,13 @@ public class LoginView {
         box.getStyleClass().add("box");
 
         title = new Label("Hey daar!");
-        title.getStyleClass().add("label-title");
+        //title.getStyleClass().add("label-title");
 
         subtitle = new Label("Klik op 'Start' om te\nbeginnen met spelen");
-        subtitle.getStyleClass().add("label-subtitle");
+        //subtitle.getStyleClass().add("label-subtitle");
 
         knopStart = new Button("Start");
-        knopStart.getStyleClass().add("button-knopStart");
+        //knopStart.getStyleClass().add("button-knopStart");
 
         box.getChildren().addAll(title, subtitle, knopStart);
 

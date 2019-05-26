@@ -1,20 +1,12 @@
 package sample.controllers;
 
-import javafx.application.Platform;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
+
 import javafx.scene.control.*;
 import javafx.scene.Scene;
-import javafx.scene.input.KeyCombination;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import sample.data.DBController;
-import sample.views.LoginView;
 import sample.views.MainView;
 
-import java.awt.event.ActionEvent;
-import java.io.IOException;
 
 public class LoginController {
     private DBController controller = new DBController();
@@ -32,12 +24,10 @@ public class LoginController {
             Stage stage = new Stage();
             Scene scene = new Scene(mainView.getRoot());
             stage.setScene(scene);
-
-            scene.getStylesheets().add("./sample/css/game.css");
-            scene.getStylesheets().add("https://fonts.googleapis.com/css?family=Baloo+Bhai");
-            stage.setFullScreenExitHint("");
             stage.show();
-            stage.setFullScreen(true);
+            stage.setMinHeight(250);
+            stage.setMinWidth(250);
+            //stage.setFullScreen(true);
             stage.setTitle("GAME!!!");
 
             Stage thisStage = (Stage) button.getScene().getWindow();

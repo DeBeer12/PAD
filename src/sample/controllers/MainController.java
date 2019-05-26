@@ -3,11 +3,7 @@ package sample.controllers;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.application.Platform;
-import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.input.KeyCombination;
-import javafx.stage.Window;
 import javafx.util.Duration;
 import sample.data.DBController;
 import javafx.stage.Stage;
@@ -15,6 +11,7 @@ import javafx.stage.Stage;
 
 import javafx.scene.control.*;
 import sample.models.Game;
+import sample.views.EndGameView;
 import sample.views.LoginView;
 import sample.views.MainView;
 
@@ -26,7 +23,8 @@ public class MainController {
     private int gat3;
     private int gat4;
     private int gat5;
-    LoginController loginController = new LoginController();
+
+    private Timeline timeline;
 
 
     public void initialize() {
@@ -35,15 +33,29 @@ public class MainController {
     }
 
     public void setScore(Label score, Label balls) {
-        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), ev -> {
+        timeline = new Timeline(new KeyFrame(Duration.seconds(1), ev -> {
             score.setText("Score: " + returnPunten());
             balls.setText("Ballen: " + returnBallen());
+            if (returnBallen() == 0){
+                EndGameController endGameController = new EndGameController();
+                EndGameView endGameView = new EndGameView(endGameController);
+
+                Stage stage = new Stage();
+                Scene scene = new Scene(endGameView.getRoot());
+                stage.setScene(scene);
+                stage.show();
+                stage.setMinHeight(250);
+                stage.setMinWidth(250);
+                //stage.setFullScreen(true);
+                stage.setTitle("GAME!!!");
+                timeline.stop();
+            }
         }));
         timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();
     }
 
-    private int returnPunten() {
+    public int returnPunten() {
         Game game = controller.getGame();
         gat1 = game.getSensor1();
         gat2 = game.getSensor2();
@@ -55,7 +67,7 @@ public class MainController {
         return punten;
     }
 
-    private int returnBallen() {
+    public int returnBallen() {
         Game game = controller.getGame();
         gat1 = game.getSensor1();
         gat2 = game.getSensor2();
@@ -73,18 +85,14 @@ public class MainController {
             thisStage.close();
 
             Stage stage = new Stage();
-
             LoginController loginController = new LoginController();
             LoginView loginView = new LoginView(loginController);
             Scene scene = new Scene(loginView.getRoot());
             stage.setScene(scene);
-            scene.getStylesheets().add("./sample/css/login.css");
-            scene.getStylesheets().add("https://fonts.googleapis.com/css?family=Baloo+Bhai");
-            stage.setFullScreenExitHint("");
             stage.show();
-            stage.setFullScreen(true);
+            //stage.setFullScreen(true);
             stage.setTitle("TITLESCREEN");
-                        controller.deleteGame();
+            controller.deleteGame();
         });
     }
 }

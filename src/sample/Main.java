@@ -36,11 +36,13 @@ public class Main extends Application {
 
         Scene scene = new Scene(loginView.getRoot());
         secondaryStage.setScene(scene);
-        scene.getStylesheets().add("./sample/css/login.css");
-        scene.getStylesheets().add("https://fonts.googleapis.com/css?family=Baloo+Bhai");
-        secondaryStage.setFullScreenExitHint("");
+//        scene.getStylesheets().add("./sample/css/login.css");
+//        scene.getStylesheets().add("https://fonts.googleapis.com/css?family=Baloo+Bhai");
+        //secondaryStage.setFullScreenExitHint("");
         secondaryStage.show();
-        secondaryStage.setFullScreen(true);
+        //secondaryStage.setFullScreen(true);
+        secondaryStage.setMinHeight(250);
+        secondaryStage.setMinWidth(250);
         secondaryStage.setTitle("TITLESCREEN");
 
     }

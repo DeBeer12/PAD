@@ -15,9 +15,9 @@ public class MainView {
     private Parent root;
     private MainController mainController;
 
-    Label score;
-    Label balls;
-    Button knop;
+    private Label score;
+    private Label balls;
+    private Button knop;
 
     public MainView(MainController mainController){
         root = createRoot();
@@ -29,16 +29,11 @@ public class MainView {
         //View needs to get modified
         //Add a start game button as well
         VBox box = new VBox(10);
-        box.getStyleClass().add("box");
-
         score = new Label();
-        score.getStyleClass().add("label-score");
 
         balls = new Label();
-        balls.getStyleClass().add("label-balls");
 
-        knop = new Button("Stop");
-        knop.getStyleClass().add("button-knop");
+        knop = new Button("Stoppen met spelen");
 
         box.getChildren().addAll(score, balls, knop);
 
@@ -55,5 +50,6 @@ public class MainView {
     public Parent getRoot(){
         return root;
     }
+
 
 }
