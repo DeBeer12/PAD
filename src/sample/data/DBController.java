@@ -2,7 +2,6 @@ package sample.data;
 
 import sample.models.Game;
 
-import javax.swing.plaf.nimbus.State;
 import java.sql.*;
 
 //This is the database connection/controller
@@ -13,8 +12,8 @@ public class DBController {
     private String ip = "oege.ie.hva.nl";
     private String username = "oosterr4";
     private String password = "XOxZwUxliy/8+0";
-    private String connectionStatus;
 
+    private String connectionStatus;
 
 
     public DBController() {
@@ -49,7 +48,8 @@ public class DBController {
         }
 
         return game;
-    }public Game getGameDummy(){
+    }
+    public Game getGameDummy(){
         String sql = "SELECT * FROM Gametest WHERE GAMEID = 1 ";
         Game game = null;
         try {

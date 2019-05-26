@@ -1,48 +1,51 @@
 package sample.views;
 
-import javafx.application.Application;
-import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import sample.controllers.LoginController;
-import sample.controllers.MainController;
 
 public class LoginView {
 
     private Parent root;
     private LoginController loginController;
+    private Stage stage;
 
-    Label title;
-    Label subtitle;
-    Button knopStart;
+    private Label title;
+    private Label subtitle;
+    private Button knopStart;
 
     public LoginView(LoginController loginController) {
         root = createRoot();
+        stage = new Stage();
+        stage.setScene(new Scene(root));
         this.loginController = loginController;
         setupController();
     }
 
     public Parent createRoot() {
-        //View needs to get modified
-        //Add a start game button as well
         VBox box = new VBox(10);
-        box.getStyleClass().add("box");
+        Font font = new Font("Verdana",20);
 
         title = new Label("Hey daar!");
-        //title.getStyleClass().add("label-title");
+        title.setFont(font);
+        title.setStyle("-fx-text-fill: orange");
 
         subtitle = new Label("Klik op 'Start' om te\nbeginnen met spelen");
-        //subtitle.getStyleClass().add("label-subtitle");
+        subtitle.setFont(font);
+        subtitle.setStyle("-fx-text-fill: orange");
 
         knopStart = new Button("Start");
-        //knopStart.getStyleClass().add("button-knopStart");
-
+        knopStart.setStyle("-fx-text-fill: purple; -fx-background-color: orange");
+        knopStart.setFont(font);
         box.getChildren().addAll(title, subtitle, knopStart);
+        box.setStyle("-fx-background-color: purple");
+        box.setAlignment(Pos.CENTER);
 
         return box;
     }
@@ -53,8 +56,12 @@ public class LoginView {
 
     }
 
-    public Parent getRoot() {
-        return root;
+    public void show(){
+        stage.setMinWidth(250);
+        stage.setMinHeight(250);
+        stage.setTitle("TITLESCREEN");
+        stage.show();
     }
+
 
 }

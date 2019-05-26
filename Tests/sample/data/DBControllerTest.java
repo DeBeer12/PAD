@@ -21,4 +21,5 @@ public class DBControllerTest {
         String actual = controller.getConnectionStatus();
         assertEquals(expected,actual);
     }
+
 }

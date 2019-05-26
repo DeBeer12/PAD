@@ -58,4 +58,5 @@ public class GameTest {
         int actual = game.getSensor5();
         assertEquals(expected,actual);
     }
+
 }
