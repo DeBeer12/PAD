@@ -24,7 +24,9 @@ public class EndView {
     public EndView(EndController endController) {
         root = createRoot();
         stage = new Stage();
-        stage.setScene(new Scene(root));
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add("./sample/css/end.css");
+        stage.setScene(scene);
         this.endController = endController;
         setupController();
     }
@@ -63,6 +65,7 @@ public class EndView {
 
     public void show(){
         stage.setFullScreen(true);
+        stage.setFullScreenExitHint("");
         stage.setTitle("TITLESCREEN");
         stage.setMinWidth(250);
         stage.setMinHeight(250);

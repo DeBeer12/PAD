@@ -26,7 +26,9 @@ public class LoginView {
     public LoginView(LoginController loginController) {
         root = createRoot();
         stage = new Stage();
-        stage.setScene(new Scene(root));
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add("./sample/css/login.css");
+        stage.setScene(scene);
 
         this.loginController = loginController;
         setupController();
@@ -64,6 +66,7 @@ public class LoginView {
 
     public void show(){
         stage.setFullScreen(true);
+        stage.setFullScreenExitHint("");
         stage.setTitle("TITLESCREEN");
         stage.setMinWidth(250);
         stage.setMinHeight(250);

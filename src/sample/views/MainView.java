@@ -25,7 +25,10 @@ public class MainView {
     public MainView(MainController mainController){
         root = createRoot();
         stage = new Stage();
-        stage.setScene(new Scene(root));
+        Scene scene = new Scene(root);
+        scene.getStylesheets().add("./sample/css/game.css");
+        stage.setScene(scene);
+
         this.mainController = mainController;
         setupController();
     }
@@ -59,6 +62,7 @@ public class MainView {
 
     public void show(){
         stage.setFullScreen(true);
+        stage.setFullScreenExitHint("");
         stage.setTitle("TITLESCREEN");
         stage.setMinWidth(250);
         stage.setMinHeight(250);
