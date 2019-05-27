@@ -1,10 +1,10 @@
 package sample.controllers;
 
-import java.awt.*;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import sample.data.DBController;
@@ -12,7 +12,7 @@ import sample.models.Game;
 import sample.views.LoginView;
 
 public class EndController {
-    private MainController mainController = new MainController();
+    private GameController gameController = new GameController();
     private DBController controller = new DBController();
     private int gat1;
     private int gat2;
@@ -26,11 +26,11 @@ public class EndController {
         System.out.println("Let's get the bread end-screen");
     }
 
-    private void showEndScore(Label punten) {
+    public void showEndScore(Label punten) {
         /**
          * MOET UIT GAMERECORDS TABEL KOMEN
          */
-        punten.setText("" + mainController.returnPunten());
+        punten.setText("" + gameController.returnPunten());
     }
 
     public void switchToTitle() {

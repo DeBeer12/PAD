@@ -7,7 +7,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import sample.controllers.EndController;
-import sample.controllers.MainController;
+import sample.controllers.GameController;
 
 
 public class EndView {
@@ -57,6 +57,7 @@ public class EndView {
 
     public void setupController() {
         endController.initialize();
+        endController.showEndScore(punten);
     }
 
     public Parent getRoot() {

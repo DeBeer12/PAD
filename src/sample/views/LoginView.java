@@ -11,7 +11,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import sample.controllers.LoginController;
-import sample.controllers.MainController;
+import sample.controllers.GameController;
 
 public class LoginView {
 

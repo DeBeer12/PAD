@@ -3,11 +3,6 @@ package sample.controllers;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.application.Platform;
-import javafx.scene.Group;
-import javafx.scene.Scene;
-import javafx.scene.input.KeyCombination;
-import javafx.stage.Window;
 import javafx.util.Duration;
 import sample.data.DBController;
 import javafx.stage.Stage;
@@ -17,9 +12,8 @@ import javafx.scene.control.*;
 import sample.models.Game;
 import sample.views.EndView;
 import sample.views.LoginView;
-import sample.views.MainView;
 
-public class MainController {
+public class GameController {
 
     private DBController controller = new DBController();
     private int gat1;

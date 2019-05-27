@@ -1,20 +1,9 @@
 package sample.controllers;
 
-import javafx.application.Platform;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.control.*;
-import javafx.scene.Scene;
-import javafx.scene.input.KeyCombination;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import sample.data.DBController;
-import sample.views.LoginView;
-import sample.views.MainView;
-
-import java.awt.event.ActionEvent;
-import java.io.IOException;
+import sample.views.GameView;
 
 public class LoginController {
     private DBController controller = new DBController();
@@ -26,9 +15,9 @@ public class LoginController {
 
     public void startGame(Button button) {
         button.setOnAction(E -> {
-            MainController mainController = new MainController();
-            MainView mainView = new MainView(mainController);
-            mainView.show();
+            GameController gameController = new GameController();
+            GameView gameView = new GameView(gameController);
+            gameView.show();
 
             Stage thisStage = (Stage) button.getScene().getWindow();
             thisStage.close();

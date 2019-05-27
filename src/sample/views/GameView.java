@@ -7,29 +7,29 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
-import sample.controllers.MainController;
+import sample.controllers.GameController;
 
 import javafx.scene.control.*;
 
 
-public class MainView {
+public class GameView {
 
     private Parent root;
-    private MainController mainController;
+    private GameController gameController;
     private Stage stage;
 
     Label score;
     Label balls;
     Button knop;
 
-    public MainView(MainController mainController){
+    public GameView(GameController gameController){
         root = createRoot();
         stage = new Stage();
         Scene scene = new Scene(root);
         scene.getStylesheets().add("./sample/css/game.css");
         stage.setScene(scene);
 
-        this.mainController = mainController;
+        this.gameController = gameController;
         setupController();
     }
 
@@ -54,9 +54,9 @@ public class MainView {
     }
 
     public void setupController(){
-        mainController.initialize();
-        mainController.resetGame(knop);
-        mainController.setScore(score, balls);
+        gameController.initialize();
+        gameController.resetGame(knop);
+        gameController.setScore(score, balls);
 
     }
 
