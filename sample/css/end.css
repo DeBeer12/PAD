@@ -1,27 +1,33 @@
-.box{
+@font-face {
+    /*font-family: Baloo Bhai;*/
+    src: url('fonts/BalooBhai-regular.ttf');
+}
+
+.box {
     -fx-min-height: 500;
     -fx-min-width: 500;
     -fx-padding: 10, 10, 10, 10;
     -fx-background-color: purple;
     -fx-alignment: CENTER;
+    -fx-font-family: 'Baloo Bhai';
 }
 
-.label-title{
+.label-title {
+    -fx-text-fill: orange;
+    -fx-font-size: 125;
+}
+
+.label-punten {
     -fx-text-fill: orange;
     -fx-font-size: 150;
 }
 
-.label-punten{
+.label-subtitle {
     -fx-text-fill: orange;
-    -fx-font-size: 200;
+    -fx-font-size: 125;
 }
 
-.label-subtitle{
-    -fx-text-fill: orange;
-    -fx-font-size: 150;
-}
-
-.label-restartGame{
+.label-restartGame {
     -fx-text-fill: orange;
     -fx-font-size: 100;
     -fx-text-alignment: CENTER;

@@ -43,7 +43,7 @@ public class EndView {
         punten = new Label();
         punten.getStyleClass().add("label-punten");
 
-        subtitle = new Label("Behaald");
+        subtitle = new Label("Punten behaald");
         subtitle.getStyleClass().add("label-subtitle");
 
         restartGame = new Label("Om nog een keer te spelen\ndruk op de start knop");
