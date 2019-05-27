@@ -23,7 +23,8 @@ public class EndView {
 
     public EndView(EndController endController) {
         root = createRoot();
-        stage.setScene( new Scene(createRoot()));
+        stage = new Stage();
+        stage.setScene(new Scene(root));
         this.endController = endController;
         setupController();
     }

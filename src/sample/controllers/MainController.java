@@ -15,6 +15,7 @@ import javafx.stage.Stage;
 
 import javafx.scene.control.*;
 import sample.models.Game;
+import sample.views.EndView;
 import sample.views.LoginView;
 import sample.views.MainView;
 
@@ -39,7 +40,9 @@ public class MainController {
             score.setText("Score: " + returnPunten());
             balls.setText("Ballen: " + returnBallen());
             if(returnBallen() == 0){
-
+                EndController endController = new EndController();
+                EndView endView = new EndView(endController);
+                endView.show();
             }
         }));
         timeline.setCycleCount(Animation.INDEFINITE);
@@ -72,20 +75,12 @@ public class MainController {
 
     public void resetGame(Button button) {
         button.setOnAction(e -> {
-            Stage thisStage = (Stage) button.getScene().getWindow();
-            thisStage.close();
-
-            Stage stage = new Stage();
-
             LoginController loginController = new LoginController();
             LoginView loginView = new LoginView(loginController);
-            Scene scene = new Scene(loginView.getRoot());
-            stage.setScene(scene);
-            scene.getStylesheets().add("./sample/css/login.css");
-            stage.setFullScreenExitHint("");
-            stage.show();
-            stage.setFullScreen(true);
-            stage.setTitle("TITLESCREEN");
+            loginView.show();
+
+            Stage thisStage = (Stage) button.getScene().getWindow();
+            thisStage.close();
             controller.deleteGame();
         });
     }

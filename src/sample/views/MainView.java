@@ -24,7 +24,8 @@ public class MainView {
 
     public MainView(MainController mainController){
         root = createRoot();
-        stage.setScene( new Scene(createRoot()));
+        stage = new Stage();
+        stage.setScene(new Scene(root));
         this.mainController = mainController;
         setupController();
     }
@@ -54,6 +55,14 @@ public class MainView {
         mainController.resetGame(knop);
         mainController.setScore(score, balls);
 
+    }
+
+    public void show(){
+        stage.setFullScreen(true);
+        stage.setTitle("TITLESCREEN");
+        stage.setMinWidth(250);
+        stage.setMinHeight(250);
+        stage.show();
     }
 
     public Parent getRoot(){

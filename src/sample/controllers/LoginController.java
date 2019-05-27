@@ -28,15 +28,7 @@ public class LoginController {
         button.setOnAction(E -> {
             MainController mainController = new MainController();
             MainView mainView = new MainView(mainController);
-
-            Stage stage = new Stage();
-            Scene scene = new Scene(mainView.getRoot());
-            stage.setScene(scene);
-            scene.getStylesheets().add("./sample/css/game.css");
-            stage.setFullScreenExitHint("");
-            stage.show();
-            stage.setFullScreen(true);
-            stage.setTitle("GAME!!!");
+            mainView.show();
 
             Stage thisStage = (Stage) button.getScene().getWindow();
             thisStage.close();

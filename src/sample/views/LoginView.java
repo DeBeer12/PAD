@@ -25,9 +25,9 @@ public class LoginView {
 
     public LoginView(LoginController loginController) {
         root = createRoot();
-        Scene scene = new Scene(createRoot());
-        stage.setScene(scene);
-        scene.getStylesheets().add("./sample/css/login.css");
+        stage = new Stage();
+        stage.setScene(new Scene(root));
+
         this.loginController = loginController;
         setupController();
     }
