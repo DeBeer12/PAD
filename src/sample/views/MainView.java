@@ -2,9 +2,11 @@ package sample.views;
 
 import javafx.geometry.Insets;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
+import javafx.stage.Stage;
 import sample.controllers.MainController;
 
 import javafx.scene.control.*;
@@ -14,6 +16,7 @@ public class MainView {
 
     private Parent root;
     private MainController mainController;
+    private Stage stage;
 
     Label score;
     Label balls;
@@ -21,6 +24,7 @@ public class MainView {
 
     public MainView(MainController mainController){
         root = createRoot();
+        stage.setScene( new Scene(createRoot()));
         this.mainController = mainController;
         setupController();
     }

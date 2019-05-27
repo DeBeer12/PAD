@@ -32,9 +32,7 @@ public class LoginController {
             Stage stage = new Stage();
             Scene scene = new Scene(mainView.getRoot());
             stage.setScene(scene);
-
             scene.getStylesheets().add("./sample/css/game.css");
-            scene.getStylesheets().add("https://fonts.googleapis.com/css?family=Baloo+Bhai");
             stage.setFullScreenExitHint("");
             stage.show();
             stage.setFullScreen(true);

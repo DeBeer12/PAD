@@ -30,7 +30,7 @@ public class MainController {
 
 
     public void initialize() {
-        System.out.println("Lets get the bread");
+        System.out.println("Lets get the bread game-screen");
 
     }
 
@@ -38,12 +38,15 @@ public class MainController {
         Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), ev -> {
             score.setText("Score: " + returnPunten());
             balls.setText("Ballen: " + returnBallen());
+            if(returnBallen() == 0){
+
+            }
         }));
         timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();
     }
 
-    private int returnPunten() {
+    public int returnPunten() {
         Game game = controller.getGame();
         gat1 = game.getSensor1();
         gat2 = game.getSensor2();
@@ -79,12 +82,11 @@ public class MainController {
             Scene scene = new Scene(loginView.getRoot());
             stage.setScene(scene);
             scene.getStylesheets().add("./sample/css/login.css");
-            scene.getStylesheets().add("https://fonts.googleapis.com/css?family=Baloo+Bhai");
             stage.setFullScreenExitHint("");
             stage.show();
             stage.setFullScreen(true);
             stage.setTitle("TITLESCREEN");
-                        controller.deleteGame();
+            controller.deleteGame();
         });
     }
 }

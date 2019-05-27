@@ -15,6 +15,12 @@ public class DBController {
     private String password = "XOxZwUxliy/8+0";
 
     public DBController() {
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+        }catch (ClassNotFoundException e){
+            e.printStackTrace();
+            return;
+        }
         try {
             conn = DriverManager.getConnection("jdbc:mysql://" + ip + "/zoosterr4?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"
                     ,username, password);

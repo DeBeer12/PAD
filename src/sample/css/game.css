@@ -1,3 +1,8 @@
+@font-face {
+    /*font-family: Baloo Bhai;*/
+    src: url('fonts/BalooBhai-regular.ttf');
+}
+
 .box{
     -fx-min-height: 500;
     -fx-min-width: 500;
