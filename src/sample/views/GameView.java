@@ -60,7 +60,7 @@ public class GameView {
     }
 
     public void show(){
-        //stage.setFullScreen(true);
+        stage.setFullScreen(true);
         stage.setMinWidth(250);
         stage.setMinHeight(250);
         stage.setTitle("GAME!!!");

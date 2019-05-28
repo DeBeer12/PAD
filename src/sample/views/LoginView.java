@@ -60,6 +60,7 @@ public class LoginView {
         stage.setMinWidth(250);
         stage.setMinHeight(250);
         stage.setTitle("TITLESCREEN");
+        stage.setFullScreen(true);
         stage.show();
     }
 
