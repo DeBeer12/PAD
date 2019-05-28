@@ -40,10 +40,10 @@ public class LoginView {
         VBox box = new VBox(10);
         box.getStyleClass().add("box");
 
-        title = new Label("Hey daar!");
+        title = new Label("Awesome Skeeball!");
         title.getStyleClass().add("label-title");
 
-        subtitle = new Label("Klik op 'Start' om te\nbeginnen met spelen");
+        subtitle = new Label("Klik op 'Start' om te beginnen met spelen");
         subtitle.getStyleClass().add("label-subtitle");
 
         knopStart = new Button("Start");
@@ -65,7 +65,7 @@ public class LoginView {
     }
 
     public void show(){
-        stage.setFullScreen(true);
+        //stage.setFullScreen(true);
         stage.setFullScreenExitHint("");
         stage.setTitle("TITLESCREEN");
         stage.setMinWidth(250);

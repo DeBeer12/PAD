@@ -5,6 +5,7 @@ import javafx.stage.Stage;
 import sample.controllers.EndController;
 import sample.controllers.GameController;
 import sample.controllers.LoginController;
+import sample.data.DBController;
 import sample.views.EndView;
 import sample.views.GameView;
 import sample.views.LoginView;
@@ -26,9 +27,9 @@ public class Main extends Application {
 //    }
 
     public void start(Stage thirdStage){
-        EndController endController = new EndController();
-        EndView endView = new EndView(endController);
-        endView.show();
+        LoginController loginController = new LoginController();
+        LoginView loginView = new LoginView(loginController);
+        loginView.show();
     }
 
 

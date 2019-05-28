@@ -78,4 +78,14 @@ public class DBController {
         }
     }
 
+    public void insertScore(int id, String spelerNaam, int score){
+        String sql = "INSERT INTO GamesList (GameID, naamSpeler, scoreSpeler) VALUES ("+id+", '"+spelerNaam+"', "+score+")";
+        try {
+            Statement st = conn.createStatement();
+            st.executeUpdate(sql);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

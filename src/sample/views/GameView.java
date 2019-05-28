@@ -38,6 +38,8 @@ public class GameView {
         //Add a start game button as well
         VBox box = new VBox(10);
         box.getStyleClass().add("box");
+        Label title = new Label("Awesome Skeeball!");
+        title.getStyleClass().add("label-score");
 
         score = new Label();
         score.getStyleClass().add("label-score");
@@ -48,7 +50,7 @@ public class GameView {
         knop = new Button("Stop");
         knop.getStyleClass().add("button-knop");
 
-        box.getChildren().addAll(score, balls, knop);
+        box.getChildren().addAll(title, score, balls);
 
         return box;
     }
@@ -61,7 +63,7 @@ public class GameView {
     }
 
     public void show(){
-        stage.setFullScreen(true);
+        //stage.setFullScreen(true);
         stage.setFullScreenExitHint("");
         stage.setTitle("TITLESCREEN");
         stage.setMinWidth(250);

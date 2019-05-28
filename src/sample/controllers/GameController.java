@@ -23,6 +23,8 @@ public class GameController {
     private int gat5;
     LoginController loginController = new LoginController();
 
+    private Timeline timeline;
+
 
     public void initialize() {
         System.out.println("Lets get the bread game-screen");
@@ -30,13 +32,16 @@ public class GameController {
     }
 
     public void setScore(Label score, Label balls) {
-        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(1), ev -> {
+        timeline = new Timeline(new KeyFrame(Duration.seconds(1), ev -> {
             score.setText("Score: " + returnPunten());
             balls.setText("Ballen: " + returnBallen());
             if(returnBallen() == 0){
                 EndController endController = new EndController();
                 EndView endView = new EndView(endController);
                 endView.show();
+                Stage thisStage = (Stage) score.getScene().getWindow();
+                thisStage.close();
+                timeline.stop();
             }
         }));
         timeline.setCycleCount(Animation.INDEFINITE);
