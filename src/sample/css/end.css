@@ -32,3 +32,18 @@
     -fx-font-size: 100;
     -fx-text-alignment: CENTER;
 }
+
+.button-yes {
+    -fx-background-color: green;
+    -fx-font-size: 50px;
+    -fx-min-width: 100px;
+    -fx-min-height: 100px;
+
+}
+.button-no {
+    -fx-background-color: red;
+    -fx-font-size: 50px;
+    -fx-min-width: 100px;
+    -fx-min-height: 100px;
+
+}

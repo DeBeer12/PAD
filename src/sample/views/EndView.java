@@ -63,7 +63,10 @@ public class EndView {
         HBox hBox = new HBox(20);
 
         yes = new Button("Ja verstuur!");
+        yes.getStyleClass().add("button-yes");
+
         no = new Button("Nee liever niet");
+        no.getStyleClass().add("button-no");
 
         hBox.getChildren().addAll(yes,no);
 
