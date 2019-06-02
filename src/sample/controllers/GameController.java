@@ -3,6 +3,8 @@ package sample.controllers;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
 import sample.data.DBController;
 import javafx.stage.Stage;
@@ -13,6 +15,8 @@ import sample.models.Game;
 import sample.views.EndView;
 import sample.views.LoginView;
 
+import java.io.File;
+
 public class GameController {
 
     private DBController controller = new DBController();
@@ -21,13 +25,17 @@ public class GameController {
     private int gat3;
     private int gat4;
     private int gat5;
-    LoginController loginController = new LoginController();
+
+    private String soundfile = "src/sample/resources/game.wav";
+    private Media media = new Media(new File(soundfile).toURI().toString());
+    private MediaPlayer mediaPlayer = new MediaPlayer(media);
 
     private Timeline timeline;
 
 
     public void initialize() {
         System.out.println("Lets get the bread game-screen");
+        mediaPlayer.play();
 
     }
 
