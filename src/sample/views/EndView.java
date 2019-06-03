@@ -43,8 +43,6 @@ public class EndView {
         //Add a start game button as well
         VBox box = new VBox(10);
         box.getStyleClass().add("box");
-        Label titel = new Label("Awesome Skeeball!");
-        titel.getStyleClass().add("label-title");
 
         title = new Label("Je hebt ");
         title.getStyleClass().add("label-title");
@@ -55,10 +53,11 @@ public class EndView {
         subtitle = new Label("Punten behaald");
         subtitle.getStyleClass().add("label-subtitle");
 
-        restartGame = new Label("Voer hier je naam in om te kijek hoe hoog je bent geeindigt!");
+        restartGame = new Label("Voer hier je naam in om te kijken hoe hoog je bent geeindigt!");
         restartGame.getStyleClass().add("label-restartGame");
 
         naam = new TextField();
+        naam.getStyleClass().add("text-naam");
 
         HBox hBox = new HBox(20);
 
@@ -72,7 +71,7 @@ public class EndView {
 
         hBox.setAlignment(Pos.CENTER);
 
-        box.getChildren().addAll(titel, title, punten, subtitle,restartGame, naam, hBox);
+        box.getChildren().addAll(title, punten, subtitle,restartGame, naam, hBox);
 
         return box;
     }
@@ -88,7 +87,7 @@ public class EndView {
     }
 
     public void show(){
-        //stage.setFullScreen(true);
+        stage.setFullScreen(true);
         stage.setFullScreenExitHint("");
         stage.setTitle("TITLESCREEN");
         stage.setMinWidth(250);

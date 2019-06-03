@@ -65,7 +65,7 @@ public class LoginView {
     }
 
     public void show(){
-        //stage.setFullScreen(true);
+        stage.setFullScreen(true);
         stage.setFullScreenExitHint("");
         stage.setTitle("TITLESCREEN");
         stage.setMinWidth(250);

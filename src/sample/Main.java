@@ -17,20 +17,19 @@ public class Main extends Application {
 //        GameController gameController = new GameController();
 //        GameView gameView = new GameView(gameController);
 //        gameView.show();
-//        primaryStage.show();
 //    }
 
-//    public void start(Stage secondaryStage) {
-//        LoginController loginController = new LoginController();
-//        LoginView loginView = new LoginView(loginController);
-//        loginView.show();
-//    }
-
-    public void start(Stage thirdStage){
+    public void start(Stage secondaryStage) {
         LoginController loginController = new LoginController();
         LoginView loginView = new LoginView(loginController);
         loginView.show();
     }
+
+//    public void start(Stage thirdStage){
+//        EndController endController = new EndController();
+//        EndView endView = new EndView(endController);
+//        endView.show();
+//    }
 
 
     public static void main(String[] args) {

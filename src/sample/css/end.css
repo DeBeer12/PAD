@@ -14,7 +14,7 @@
 
 .label-title {
     -fx-text-fill: orange;
-    -fx-font-size: 125;
+    -fx-font-size: 100;
 }
 
 .label-punten {
@@ -24,13 +24,19 @@
 
 .label-subtitle {
     -fx-text-fill: orange;
-    -fx-font-size: 125;
+    -fx-font-size: 100;
 }
 
 .label-restartGame {
     -fx-text-fill: orange;
-    -fx-font-size: 100;
+    -fx-font-size: 50;
     -fx-text-alignment: CENTER;
+}
+
+.text-naam{
+    -fx-background-color: #f4b642;
+    -fx-font-size: 30;
+    -fx-max-width: 400;
 }
 
 .button-yes {
